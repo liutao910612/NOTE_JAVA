@@ -1,11 +1,12 @@
-package com.kevin.note.java.data.structure;
+package com.kevin.note.java.data.structure.common;
 
 /**
- * 用数组实现的队列
+ * 循环队列
+ *
  * @Author:Kevin
- * @Date:Created in 21:29 2021/3/1
+ * @Date:Created in 21:07 2021/3/2
  */
-public class ArrayQueue {
+public class CircularQueue {
     private String[] items;  //用于存储队列中的数据
     private int n = 0;
 
@@ -13,27 +14,27 @@ public class ArrayQueue {
     private int head = 0;
     private int tail = 0;
 
-    public ArrayQueue(int capacity) {
+    public CircularQueue(int capacity) {
         this.items = new String[capacity];
         this.n = capacity;
     }
 
-    public boolean enqueue(String item){
-        if(tail == n){
+    public boolean enqueue(String item) {
+        if ((tail + 1) % n == head) {
             return false;
         }
         items[tail] = item;
-        tail++;
+        tail = (tail + 1) % n;
         return true;
     }
 
-    public String dequeue(){
-        if(head == tail){
+    public String dequeue() {
+        if (head == tail) {
             return null;
         }
 
         String item = items[head];
-        head++;
+        head = (head + 1) % n;
         return item;
     }
 }

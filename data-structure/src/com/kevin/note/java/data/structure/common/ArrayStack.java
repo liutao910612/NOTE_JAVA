@@ -1,4 +1,4 @@
-package com.kevin.note.java.data.structure;
+package com.kevin.note.java.data.structure.common;
 
 /**
  * 使用数组来实现栈
