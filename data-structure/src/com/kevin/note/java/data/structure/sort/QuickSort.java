@@ -23,7 +23,7 @@ public class QuickSort {
             return ;
         }
 
-        //获取分区点
+        //获取分区点，将小于分区点和大于分区点的数据分成两个数组
         int pivot = array[end];
         int i = start;
         int temp;
