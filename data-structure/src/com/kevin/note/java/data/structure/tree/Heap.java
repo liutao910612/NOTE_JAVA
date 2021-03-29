@@ -44,6 +44,51 @@ public class Heap {
         heapify(a, count, 1);
     }
 
-    private void heapify(int[] a, int count, int i) {
+    public void sort(int[] a, int n) {
+        buildHeap(a, n);
+        int k = n;
+        int temp;
+        while (k > 1) {
+            temp = a[1];
+            a[1] = a[k];
+            a[k] = temp;
+            --k;
+            heapify(a,k,1);
+        }
+    }
+
+    private void buildHeap(int[] a, int n) {
+        for (int i = n / 2; i >= 1; --i) {
+            heapify(a, n, i);
+        }
+    }
+
+    /**
+     * 自上往下堆化
+     *
+     * @param a
+     * @param n
+     * @param i
+     */
+    private void heapify(int[] a, int n, int i) {
+        int temp;
+        while (true) {
+            int maxPos = i;
+            if (i * 2 <= n && a[i] < a[i * 2]) {
+                maxPos = i * 2;
+            }
+
+            if (i * 2 + 1 <= n && a[i] < a[i * 2 + 1]) {
+                maxPos = i * 2 + 1;
+            }
+
+            if (maxPos == i) {
+                break;
+            }
+
+            temp = a[i];
+            a[i] = a[maxPos];
+            a[maxPos] = temp;
+        }
     }
 }
