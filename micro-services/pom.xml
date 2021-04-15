@@ -4,10 +4,11 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>micro-services</groupId>
+    <groupId>com.kevin.demo</groupId>
     <artifactId>micro-services</artifactId>
     <packaging>pom</packaging>
     <version>1.0</version>
+    <name>micro service demo</name>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
